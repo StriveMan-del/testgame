@@ -43,19 +43,20 @@ void MainMenuState::render(sf::RenderTarget* target) {
 
     target->draw(this->background);
     this->renderButtons(target);
+
+    //remove later
     sf::Text mouseText;
-    mouseText.setPosition(this->mousePosView);
+    mouseText.setPosition(this->mousePosView.x,this->mousePosView.y - 50);
     mouseText.setFont(this->font);
     mouseText.setCharacterSize(12);
     std::stringstream ss;
-    mouseText.setString( std::to_string(this->mousePosView.x));
+    ss<<this->mousePosView.x<<" "<<this->mousePosView.y;
+    mouseText.setString(ss.str());
+
+    target->draw(mouseText);
 }
 
-void MainMenuState::endState() {
-
-}
 void MainMenuState::updateInputs(const float &dt) {
-    this->chechForQuit();
 
 }
 void MainMenuState::initFonts(){
@@ -89,7 +90,7 @@ void MainMenuState::updateButtons() {
     //Quit game
     if(this->buttons["EXIT"]->isPressed())
     {
-        this->quit = true;
+        this->endState();
     }
 }
 

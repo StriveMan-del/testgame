@@ -5,17 +5,17 @@
 #include "State.h"
 class GameState : public State{
 private:
-    Entity player;
+    Player* player;
 
     //Functions
     void initKeybinds();
+    void initTextures();
+    void initPlayers();
 public:
     GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,std::stack<State*>* states);
     virtual ~GameState();
 
     //Functions
-
-    void endState();
 
 
     void updateInputs(const float& dt);

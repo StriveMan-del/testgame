@@ -47,7 +47,7 @@ Game::Game(){
 
 Game:: ~Game(){
     delete this->window;
-    while(this->states.empty())
+    while(!this->states.empty())
         delete this->states.top();
 }
 void Game::updateDt() {
@@ -66,7 +66,7 @@ void Game::endApplication() {
 
 void Game::updateSFMLEvents() {
     int count = 0 ;
-    while (this->window->pollEvent(this->sfEvent))
+    while (this->window->pollEvent(this->sfEvent) && count < 1)
     {
         if (this->sfEvent.type == sf::Event::Closed)
             this->window->close();
@@ -75,7 +75,6 @@ void Game::updateSFMLEvents() {
             count++;
         }
     }
-
     count = 0;
 }
 

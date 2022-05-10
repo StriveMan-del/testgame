@@ -26,7 +26,6 @@ public:
     virtual ~MainMenuState();
 
     //Functions
-    void endState();
 
 
     void updateInputs(const float& dt);

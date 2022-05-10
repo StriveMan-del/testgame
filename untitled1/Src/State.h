@@ -1,7 +1,7 @@
 #ifndef UNTITLED1_STATE_H
 #define UNTITLED1_STATE_H
 
-#include "Entity.h"
+#include "Player.h"
 
 class State {
 
@@ -13,7 +13,7 @@ protected:
         sf::RenderWindow* window;
         std::map<std::string, int>* supportedKeys;
         std::map<std::string, int> keybinds;
-        std::vector<sf::Texture> textures;
+        std::map<std::string,sf::Texture> textures;
         bool quit;
 
         sf::Vector2i mousePosScreen;
@@ -26,9 +26,8 @@ public:
     virtual ~State();
 
     const bool& getQuit() const;
+    void endState();
 
-    virtual void endState() = 0;
-    virtual void chechForQuit();
     virtual void updateMousePosition();
     virtual void updateInputs(const float& dt) = 0;
     virtual void update(const float& dt) = 0;
