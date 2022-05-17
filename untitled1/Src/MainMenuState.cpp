@@ -60,7 +60,7 @@ void MainMenuState::updateInputs(const float &dt) {
 
 }
 void MainMenuState::initFonts(){
-    if(!this->font.loadFromFile("assets/fonts/retrocycles_regular.ttf"))
+    if(!this->font.loadFromFile("assets/fonts/EmpathogenesisRegular.ttf"))
     {
         throw("ERROR::MAINMENUSTATE::FONTSLOAD");
     }
@@ -69,6 +69,9 @@ void MainMenuState::initFonts(){
 void MainMenuState::initButton() {
     this->buttons["GAME_STATE_BTN"] =new Button(100,100,150,50,
     &this->font,"New Game",
+    sf::Color(70,70,70,200),sf::Color(150,150,150,255),sf::Color(20,20,20,200));
+    this->buttons["CONTINUE"] =new Button(100,200,150,50,
+    &this->font,"Continue",
     sf::Color(70,70,70,200),sf::Color(150,150,150,255),sf::Color(20,20,20,200));
     this->buttons["EXIT"] =new Button(100,300,150,50,
                                                 &this->font,"Quit",
@@ -87,6 +90,10 @@ void MainMenuState::updateButtons() {
     {
         this->states->push(new GameState(this->window, this->supportedKeys,this->states));
     }
+    if(this->buttons["CONTINUE"]->isPressed())
+    {
+        this->states->push(new GameState(this->window, this->supportedKeys,this->states));
+    }
     //Quit game
     if(this->buttons["EXIT"]->isPressed())
     {
@@ -96,7 +103,7 @@ void MainMenuState::updateButtons() {
 
 void MainMenuState::renderButtons(sf::RenderTarget* target) {
     for(auto &it : this->buttons){
-        it.second->render(target);
+        it.second->render(*target);
     }
 }
 

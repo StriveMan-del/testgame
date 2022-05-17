@@ -11,14 +11,27 @@ class Player:public Entity{
 
 private:
     //Variables
+    float frameInvincibility;
+    float timerDammage;
+    float hp;
+    float coin;
+    bool dammaged;
     //init Functions
     void initVariables();
     void initComponents();
 public:
-Player(float x, float y,sf::Texture* texture);
+Player(float x, float y,sf::Texture& textureSheet);
 virtual ~Player();
 
 //Functions
+void update(const float & dt);
+bool checkCollision(std::vector<Entity*>& entity,const float&dt);
+bool checkCollision(std::vector<Entity*>& entity);
+bool getDammage(const float& dammage,const float& timerDammage);
+const float getCoin();
+void setCoin(const float& coin);
+const float& getHP();
+void renderUI(sf::RenderTarget& target,sf::Font& font);
 };
 
 

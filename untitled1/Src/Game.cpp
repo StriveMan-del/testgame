@@ -32,6 +32,8 @@ void Game::initKeys() {
     this->supportedKeys.emplace("D",sf::Keyboard::Key::D);
     this->supportedKeys.emplace("W",sf::Keyboard::Key::W);
     this->supportedKeys.emplace("S",sf::Keyboard::Key::S);
+    this->supportedKeys.emplace("SPACE",sf::Keyboard::Key::Space);
+    this->supportedKeys.emplace("C",sf::Keyboard::Key::C);
 }
 void Game::initStates() {
     this->states.push(new MainMenuState(this->window, &this->supportedKeys,&this->states));
@@ -53,8 +55,6 @@ Game:: ~Game(){
 void Game::updateDt() {
     /*Update the dt variables with the time it takes to update and render 1 frame*/
     this->dt = this->dtClock.restart().asSeconds();
-    float fps = 1.f / this->dt;
-    std::cout<<fps<<"\n";
 }
 
 
@@ -65,22 +65,15 @@ void Game::endApplication() {
 }
 
 void Game::updateSFMLEvents() {
-    int count = 0 ;
-    while (this->window->pollEvent(this->sfEvent) && count < 1)
+    while (this->window->pollEvent(this->sfEvent))
     {
         if (this->sfEvent.type == sf::Event::Closed)
             this->window->close();
-        if(this->sfEvent.type == sf::Event::MouseMoved)
-        {
-            count++;
-        }
     }
-    count = 0;
 }
 
 void Game::update() {
     this->updateSFMLEvents();
-
     if(!this->states.empty())
     {
         this->states.top()->update(this->dt);
