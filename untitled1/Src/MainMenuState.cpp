@@ -92,7 +92,7 @@ void MainMenuState::updateButtons() {
     }
     if(this->buttons["CONTINUE"]->isPressed())
     {
-        this->states->push(new GameState(this->window, this->supportedKeys,this->states));
+        this->states->push(new GameState(this->window, this->supportedKeys,this->states,1));
     }
     //Quit game
     if(this->buttons["EXIT"]->isPressed())

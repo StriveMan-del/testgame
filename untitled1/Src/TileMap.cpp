@@ -82,13 +82,13 @@ void TileMap::loadFromFile(std::string level) {
                     file>>type;
                     switch(type){
                         case '0':
-                            this->map[x][y][z] = new Tile(x*this->gridSizeF,y*this->gridSizeF,this->gridSizeF,&this->tileSheet,sf::IntRect(180,40,32,32),1);
+                            this->map[x][y][z] = new Tile(x*this->gridSizeF,y*this->gridSizeF,this->gridSizeF,&this->tileSheet,sf::IntRect(190,220,32,32),1);
                             break;
                         case '1':
                             this->map[x][y][z] = new Tile(x*this->gridSizeF,y*this->gridSizeF,this->gridSizeF,&this->tileSheet,sf::IntRect(40,40,32,32),0);
                             break;
                         case '2':
-                            this->map[x][y][z] = new Tile(x*this->gridSizeF,y*this->gridSizeF,this->gridSizeF,&this->tileSheet,sf::IntRect(320,40,32,32),0);
+                            this->map[x][y][z] = new Tile(x*this->gridSizeF,y*this->gridSizeF,this->gridSizeF,&this->tileSheet,sf::IntRect(20,20,32,32),0);
                             break;
                         default:
                             this->map[x][y][z] = new Tile(x*this->gridSizeF,y*this->gridSizeF,this->gridSizeF,&this->tileSheet,sf::IntRect(40,40,32,32),0);

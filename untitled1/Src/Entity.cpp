@@ -5,6 +5,7 @@
 #include "Entity.h"
 
 void Entity::initVariables() {
+
     this->animationComponent=NULL;
     this->hitboxComponent=NULL;
     this->movementSpeed = 100.f;
@@ -15,12 +16,11 @@ void Entity::initVariables() {
 
 Entity::Entity() {
     this->initVariables();
-
 }
 
 Entity::~Entity() {
- delete this->animationComponent;
- delete this->hitboxComponent;
+        delete this->animationComponent;
+        delete this->hitboxComponent;
 }
 
 void Entity::move(const float& dt) {
@@ -144,8 +144,8 @@ bool Entity::checkCollision(Entity* entity) {
     this->hitboxComponent->setColor(sf::Color::Green);
     return false;
 }
-const sf::Vector2f &Entity::getPosition() {
-    return this->hitboxComponent->getHitbox().getPosition();
+const sf::Vector2f &Entity::getPosition() const {
+    return this->hitboxComponent->getPosition();
 }
 
 const sf::FloatRect Entity::getHitbox(){
@@ -153,7 +153,7 @@ const sf::FloatRect Entity::getHitbox(){
 }
 
 void Entity::move(const float &x, const float &y, const float &dt) {
-    if(this->sprite.getPosition().x > 0 && this->sprite.getPosition().y)
+    if(this->sprite.getPosition().x && this->sprite.getPosition().y)
         this->sprite.move(x*dt*movementSpeed,y*dt*movementSpeed);
 }
 const sf::Vector2f Entity::getCenter() const

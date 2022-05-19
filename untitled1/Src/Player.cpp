@@ -4,7 +4,7 @@
 
 #include "Player.h"
 
-Player::Player(float x, float y,sf::Texture& textureSheet) {
+Player::Player(float x, float y,sf::Texture& textureSheet,float hp,float coin):hp(hp),coin(coin) {
     this->initVariables();
     this->initComponents();
 
@@ -16,15 +16,15 @@ Player::Player(float x, float y,sf::Texture& textureSheet) {
     this->animationComponent->addAnimation("MOVE",2.f,0,1,5,1,32,32);
     this->animationComponent->addAnimation("IDLE_LEFT",4.f,0,0,3,0,32,32);
 }
+Player::Player() {
 
+}
 Player::~Player() {
 
 }
 
 void Player::initVariables() {
     this->work = false;
-    this->hp = 100;
-    this->coin = 20;
     this->frameInvincibility = 10.f;
     this->timerDammage = this->frameInvincibility;
     this->dammaged = false;
@@ -81,11 +81,18 @@ bool Player::checkCollision(std::vector<Entity *> &entity) {
     return Entity::checkCollision(entity);
 
 }
-bool Player::checkCollision(std::vector<Entity *> &entity,const float&dt) {
-
-    if(Entity::checkCollision(entity)){
-        return true;
+bool Player::checkCollision(List &entity,const float&dt) {
+    if(!entity.empty()) {
+        Entity* p = entity.getHead();
+        while(entity.getNext(p) != NULL) {
+            if (this->hitboxComponent->checkIntersect(p->getHitbox())) {
+                this->hitboxComponent->setColor(sf::Color::Red);
+                return true;
+            }
+            p = entity.getNext(p);
+        }
     }
+    this->hitboxComponent->setColor(sf::Color::Green);
     return false;
 }
 

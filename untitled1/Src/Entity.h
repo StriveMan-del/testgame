@@ -12,7 +12,8 @@ private:
     void initVariables();
 
 protected:
-
+    Entity* next;
+    Entity* prev;
     float velocity_x;
     float velocity_y;
 
@@ -43,13 +44,14 @@ public:
     virtual const sf::FloatRect getHitbox();
     virtual bool checkCollision(std::vector<Entity*>& entity);
     virtual bool checkCollision(Entity* entity);
-    virtual const sf::Vector2f& getPosition();
+    virtual const sf::Vector2f& getPosition() const;
     const sf::Vector2f getCenter() const;
     //virtual const sf::Vector2f getCenter() const;
 
     virtual void update(const float& dt) ;
     virtual void render(sf::RenderTarget& target);
     virtual void playAnim(const std::string& key,const float& dt, const bool& priority);
+    friend class List;
 };
 
 

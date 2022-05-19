@@ -5,11 +5,15 @@
 #include "State.h"
 #include "TileMap.h"
 
+#include <random>
+
 class GameState : public State{
 private:
     sf::Font font;
     Player* player;
-    std::vector<Entity*> enemy;
+    std::default_random_engine random_place;
+    //std::vector<Entity*> enemy;
+    List enemy;
     std::vector<Entity*> tower;
     TileMap* map;
     float timer = 0;
@@ -21,8 +25,11 @@ private:
     void initTextures();
     void initPlayers();
     void initVariables();
+    void saveState();
+    void loadState();
 public:
     GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,std::stack<State*>* states);
+    GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,std::stack<State*>* states,short load);
     virtual ~GameState();
 
     //Functions

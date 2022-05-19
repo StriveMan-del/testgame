@@ -4,7 +4,7 @@
 
 #include "Enemy.h"
 
-Enemy::Enemy(float x, float y,sf::Texture& textureSheet):kill(false),hp(20){
+Enemy::Enemy(float x, float y,sf::Texture& textureSheet,short hp, bool kill):kill(kill),hp(hp){
     this->initVariables();
     this->initComponents();
 
@@ -15,26 +15,28 @@ Enemy::Enemy(float x, float y,sf::Texture& textureSheet):kill(false),hp(20){
     this->animationComponent->addAnimation("IDLE",1.f,0,0,5,0,16,16);
 
 }
+Enemy::Enemy() {
+
+}
 
 Enemy::~Enemy() {
 
 }
 void Enemy::initVariables() {
-this->movementSpeed = 110.f;
+this->movementSpeed = 80.f;
 }
 
 void Enemy::initComponents() {
 }
 void Enemy::update(const float &dt,Entity* player) {
     sf::Vector2f moveVec;
-    moveVec.x = player->getPosition().x - this->getPosition().x;
-    moveVec.y = player->getPosition().y - this->getPosition().y;
+    moveVec.x = (player->getPosition().x - this->getPosition().x);
+    moveVec.y = (player->getPosition().y - this->getPosition().y);
 
     float vecLength = sqrt(pow(moveVec.x, 2) + pow(moveVec.y, 2));
 
     moveVec /= vecLength;
-
-    if ((this->getPosition().x != player->getPosition().x) && std::abs(vecLength) < 500.f)
+    if ((this->getPosition().x != player->getPosition().x))
         this->move(moveVec.x, moveVec.y, dt);
     this->animationComponent->play("IDLE",dt,false);
     Entity::update(dt);
@@ -53,6 +55,9 @@ unsigned short Enemy::Dammage(const short& dammage) {
     this->hp -= dammage;
     if(this->hp <= 0)
         this->setKill(true);
+    return this->hp;
+}
+short& Enemy::getHp() {
     return this->hp;
 }
 

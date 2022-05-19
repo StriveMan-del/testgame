@@ -15,22 +15,26 @@ Turret::Turret(float x, float y, sf::Texture& textureSheet,sf::Texture& textureB
     this->animationComponent->addAnimation("IDLE",2.f,0,0,3,0,16,16);
 
 }
+Turret::Turret(sf::Texture& textureBullet):textureBullet(textureBullet) {
 
+}
 Turret::~Turret() {
     for(auto &i : this->bullet)
         delete i;
     this->bullet.clear();
 }
-void Turret::update(const float &dt,std::vector<Entity*>& entity) {
+void Turret::update(const float &dt,List& entity) {
     if(this->target == NULL) {
-        for (auto &i: entity) {
-            if (findTarget(i))
+        Entity* p = entity.getHead();
+        while(entity.getNext(p) != NULL){
+            if (findTarget(p))
                 break;
+            p = entity.getNext(p);
         }
     }
     else
     {
-        if(!this->target->isKill()) {
+        if(!this->target->isKill() && this->target) {
             findTarget(this->target);
             shoot(dt);
         }else{
@@ -47,10 +51,21 @@ void Turret::update(const float &dt,std::vector<Entity*>& entity) {
     for(std::vector<Bullet*>::iterator it = bullet.begin(); it != bullet.end(); ++it) {
         if(bullet.size()==0)
             break;
-        if(dynamic_cast<Bullet*>(*it)->getKill()) {
-            delete *it;
-            it = bullet.erase(it);
-        }
+            bullet.erase(
+                    std::remove_if(
+                            bullet.begin(),
+                            bullet.end(),
+                            [](Bullet*& b) {
+                                if(b && b->getKill())
+                                {
+                                    delete b;
+                                    return true;
+                                }
+                                return false;
+                            }
+                    ),
+                    bullet.end()
+            );
     }
     if(bullet.size() > 0) {
         for (auto i: bullet) {
@@ -92,18 +107,20 @@ bool Turret::findTarget(Entity*& enemy) {
     return false;
 }
 bool Turret::findTarget(Enemy*& enemy) {
-    sf::Vector2f moveVec;
-    moveVec.x = enemy->getPosition().x - this->getPosition().x;
-    moveVec.y = enemy->getPosition().y - this->getPosition().y;
+        sf::Vector2f moveVec;
+        if(enemy != NULL) {
+            moveVec.x = enemy->getPosition().x - this->getPosition().x;
+            moveVec.y = enemy->getPosition().y - this->getPosition().y;
 
-    float vecLength = sqrt(pow(moveVec.x, 2) + pow(moveVec.y, 2));
+            float vecLength = sqrt(pow(moveVec.x, 2) + pow(moveVec.y, 2));
 
-    moveVec /= vecLength;
+            moveVec /= vecLength;
 
-    if ((this->getPosition().x != enemy->getPosition().x) && std::abs(vecLength) < 200.f) {
-        this->target = enemy;
-        return true;
-    }
+            if ((this->getPosition().x != enemy->getPosition().x) && std::abs(vecLength) < 200.f) {
+                this->target = enemy;
+                return true;
+            }
+        }
     this->target = NULL;
     return false;
 }

@@ -15,13 +15,15 @@ private:
     void initVariables();
     void initComponents();
 public:
-    Enemy(float x, float y, sf::Texture& textureSheet);
+    Enemy(float x, float y, sf::Texture& textureSheet,short hp,bool kill = false);
+    Enemy();
     virtual ~Enemy();
     //Function
     void update(const float & dt, Entity* player);
     void setKill(bool kill);
     const bool& isKill() const;
     unsigned short Dammage(const short& dammage);
+    short& getHp();
 };
 
 

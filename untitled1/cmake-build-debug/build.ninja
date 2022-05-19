@@ -113,6 +113,70 @@ build CMakeFiles/untitled1.dir/Src/Player.cpp.obj: CXX_COMPILER__untitled1_Debug
   OBJECT_DIR = CMakeFiles\untitled1.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Src
 
+build CMakeFiles/untitled1.dir/Src/AnimationComponent.cpp.obj: CXX_COMPILER__untitled1_Debug C$:/Users/Kirill/CLionProjects/untitled1/Src/AnimationComponent.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\Src\AnimationComponent.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  INCLUDES = -isystem "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/include"
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Src
+
+build CMakeFiles/untitled1.dir/Src/HitboxComponent.cpp.obj: CXX_COMPILER__untitled1_Debug C$:/Users/Kirill/CLionProjects/untitled1/Src/HitboxComponent.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\Src\HitboxComponent.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  INCLUDES = -isystem "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/include"
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Src
+
+build CMakeFiles/untitled1.dir/Src/Tile.cpp.obj: CXX_COMPILER__untitled1_Debug C$:/Users/Kirill/CLionProjects/untitled1/Src/Tile.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\Src\Tile.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  INCLUDES = -isystem "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/include"
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Src
+
+build CMakeFiles/untitled1.dir/Src/Enemy.cpp.obj: CXX_COMPILER__untitled1_Debug C$:/Users/Kirill/CLionProjects/untitled1/Src/Enemy.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\Src\Enemy.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  INCLUDES = -isystem "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/include"
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Src
+
+build CMakeFiles/untitled1.dir/Src/Turret.cpp.obj: CXX_COMPILER__untitled1_Debug C$:/Users/Kirill/CLionProjects/untitled1/Src/Turret.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\Src\Turret.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  INCLUDES = -isystem "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/include"
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Src
+
+build CMakeFiles/untitled1.dir/Src/Bullet.cpp.obj: CXX_COMPILER__untitled1_Debug C$:/Users/Kirill/CLionProjects/untitled1/Src/Bullet.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\Src\Bullet.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  INCLUDES = -isystem "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/include"
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Src
+
+build CMakeFiles/untitled1.dir/Src/TileMap.cpp.obj: CXX_COMPILER__untitled1_Debug C$:/Users/Kirill/CLionProjects/untitled1/Src/TileMap.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\Src\TileMap.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  INCLUDES = -isystem "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/include"
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Src
+
+build CMakeFiles/untitled1.dir/Src/List.cpp.obj: CXX_COMPILER__untitled1_Debug C$:/Users/Kirill/CLionProjects/untitled1/Src/List.cpp || cmake_object_order_depends_target_untitled1
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\untitled1.dir\Src\List.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  INCLUDES = -isystem "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/include"
+  OBJECT_DIR = CMakeFiles\untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled1.dir\Src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled1
@@ -121,7 +185,7 @@ build CMakeFiles/untitled1.dir/Src/Player.cpp.obj: CXX_COMPILER__untitled1_Debug
 #############################################
 # Link the executable untitled1.exe
 
-build untitled1.exe: CXX_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.cpp.obj CMakeFiles/untitled1.dir/Src/Game.cpp.obj CMakeFiles/untitled1.dir/Src/State.cpp.obj CMakeFiles/untitled1.dir/Src/GameState.cpp.obj CMakeFiles/untitled1.dir/Src/Entity.cpp.obj CMakeFiles/untitled1.dir/Src/MainMenuState.cpp.obj CMakeFiles/untitled1.dir/Src/Button.cpp.obj CMakeFiles/untitled1.dir/Src/Player.cpp.obj | C$:/Users/Kirill/CLionProjects/lib/GCC$ 7.3.0$ MinGW$ (SEH)$ -$ 64-bit/SFML-2.5.1/lib/libsfml-graphics-s-d.a C$:/Users/Kirill/CLionProjects/lib/GCC$ 7.3.0$ MinGW$ (SEH)$ -$ 64-bit/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/Users/Kirill/CLionProjects/lib/GCC$ 7.3.0$ MinGW$ (SEH)$ -$ 64-bit/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/Users/Kirill/CLionProjects/lib/GCC$ 7.3.0$ MinGW$ (SEH)$ -$ 64-bit/SFML-2.5.1/lib/libfreetype.a
+build untitled1.exe: CXX_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.cpp.obj CMakeFiles/untitled1.dir/Src/Game.cpp.obj CMakeFiles/untitled1.dir/Src/State.cpp.obj CMakeFiles/untitled1.dir/Src/GameState.cpp.obj CMakeFiles/untitled1.dir/Src/Entity.cpp.obj CMakeFiles/untitled1.dir/Src/MainMenuState.cpp.obj CMakeFiles/untitled1.dir/Src/Button.cpp.obj CMakeFiles/untitled1.dir/Src/Player.cpp.obj CMakeFiles/untitled1.dir/Src/AnimationComponent.cpp.obj CMakeFiles/untitled1.dir/Src/HitboxComponent.cpp.obj CMakeFiles/untitled1.dir/Src/Tile.cpp.obj CMakeFiles/untitled1.dir/Src/Enemy.cpp.obj CMakeFiles/untitled1.dir/Src/Turret.cpp.obj CMakeFiles/untitled1.dir/Src/Bullet.cpp.obj CMakeFiles/untitled1.dir/Src/TileMap.cpp.obj CMakeFiles/untitled1.dir/Src/List.cpp.obj | C$:/Users/Kirill/CLionProjects/lib/GCC$ 7.3.0$ MinGW$ (SEH)$ -$ 64-bit/SFML-2.5.1/lib/libsfml-graphics-s-d.a C$:/Users/Kirill/CLionProjects/lib/GCC$ 7.3.0$ MinGW$ (SEH)$ -$ 64-bit/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/Users/Kirill/CLionProjects/lib/GCC$ 7.3.0$ MinGW$ (SEH)$ -$ 64-bit/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/Users/Kirill/CLionProjects/lib/GCC$ 7.3.0$ MinGW$ (SEH)$ -$ 64-bit/SFML-2.5.1/lib/libfreetype.a
   FLAGS = -g
   LINK_FLAGS = -static -static-libgcc
   LINK_LIBRARIES = "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/lib/libsfml-graphics-s-d.a"  "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/lib/libsfml-window-s-d.a"  "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/lib/libsfml-system-s-d.a"  -lwinmm  -lgdi32  -lOpenGL32  "C:/Users/Kirill/CLionProjects/lib/GCC 7.3.0 MinGW (SEH) - 64-bit/SFML-2.5.1/lib/libfreetype.a"  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

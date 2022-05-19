@@ -18,10 +18,6 @@ class HitboxComponent {
 private:
     sf::Sprite& sprite;
     sf::RectangleShape hitbox;
-public:
-    const sf::RectangleShape &getHitbox() const;
-
-private:
     float offset_x;
     float offset_y;
 
@@ -30,6 +26,8 @@ public:
 
     virtual ~HitboxComponent();
     //Function
+    const sf::RectangleShape &getHitbox() const;
+    const sf::Vector2f &getPosition() const;
     bool checkIntersect(const sf::FloatRect& frect);
     void update();
     void render(sf::RenderTarget& target);

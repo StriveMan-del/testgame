@@ -36,3 +36,7 @@ const sf::RectangleShape& HitboxComponent::getHitbox() const {
 void HitboxComponent::setColor(const sf::Color& color) {
     this->hitbox.setOutlineColor(color);
 }
+
+const sf::Vector2f &HitboxComponent::getPosition() const {
+    return this->hitbox.getPosition();
+}
